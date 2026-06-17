@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color: #4f6172;
   background: #dde8f0;
   font-family:
@@ -10,6 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +21,7 @@ body,
   width: 100%;
   min-height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 button,
@@ -2636,4 +2638,240 @@ button {
     width: min(15rem, 58vw);
   }
 
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .shell {
+    width: 100%;
+    min-width: 0;
+    min-height: 100svh;
+    overflow-x: hidden;
+    touch-action: pan-y;
+  }
+
+  .space-backdrop,
+  .archive-space-bg,
+  .save-ritual,
+  .save-ritual-video {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100svh;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .home-page,
+  .record-workspace,
+  .confirm-workspace,
+  .archive-page,
+  .draft-page,
+  .profile-page,
+  .about-page,
+  .detail-page {
+    width: 100%;
+    min-height: 100svh;
+    padding: max(1.25rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+    overflow-x: hidden;
+  }
+
+  .space-image {
+    background-size: auto 92%;
+    background-position: center 32%;
+    transform:
+      translate3d(calc(var(--look-x) * -4vw), calc(var(--look-y) * -3vh), 0)
+      scale(0.72);
+  }
+
+  .space-backdrop.is-active .space-image {
+    background-size: auto 92%;
+  }
+
+  .space-glow,
+  .space-ripples,
+  .space-particles {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .omphalos-hit-area {
+    top: 32%;
+    width: min(17rem, 68vw);
+  }
+
+  .home-top {
+    min-height: 4.8rem;
+  }
+
+  .brand-logo {
+    width: clamp(6.4rem, 28vw, 8.2rem);
+  }
+
+  .status-card,
+  .daily-card,
+  .daily-glass-reveal,
+  .record-input-card,
+  .confirm-analysis-card,
+  .report-card,
+  .detail-card,
+  .profile-card,
+  .empty-state,
+  .draft-card,
+  .panel {
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .record-workspace,
+  .confirm-workspace {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 1rem;
+  }
+
+  .record-page-header {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .record-input-card {
+    min-height: auto;
+    padding: 1.1rem;
+  }
+
+  .record-input-card textarea {
+    min-height: 38svh;
+    max-height: 46svh;
+    font-size: 1rem;
+  }
+
+  .analysis-tags,
+  .trigger-list,
+  .keyword-row {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .record-bottom-actions,
+  .confirm-bottom-actions,
+  .page-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    gap: 0.75rem;
+  }
+
+  .record-primary-action,
+  .record-secondary-action,
+  .glass-button,
+  .small-glass-button {
+    max-width: 100%;
+  }
+
+  .archive-page {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .archive-header {
+    width: 100%;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.6rem;
+  }
+
+  .archive-header h1 {
+    font-size: clamp(1.05rem, 5vw, 1.35rem);
+    margin-bottom: 0.35rem;
+  }
+
+  .archive-space-image {
+    background-size: auto 100%;
+    transform:
+      translate3d(calc(var(--look-x) * -3vw), calc(var(--look-y) * -2vh), 0)
+      scale(0.92);
+  }
+
+  .archive-space-cards {
+    background-size: contain;
+    opacity: 0.52;
+    transform:
+      translate3d(calc(var(--look-x) * -3vw), calc(var(--look-y) * -2vh), 0)
+      scale(1.08);
+  }
+
+  .archive-space-breath {
+    top: 38%;
+    width: min(18rem, 68vw);
+  }
+
+  .archive-orbit {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+    min-height: 58svh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem 0.2rem 2.5rem;
+    scroll-snap-type: x mandatory;
+    transform: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .memory-orb,
+  .memory-orb--0,
+  .memory-orb--1,
+  .memory-orb--2,
+  .memory-orb--3,
+  .memory-orb--4 {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex: 0 0 min(15rem, 72vw);
+    width: min(15rem, 72vw);
+    min-height: 4.6rem;
+    scroll-snap-align: center;
+  }
+
+  .draft-page {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .draft-list {
+    width: 100%;
+    max-height: 66svh;
+    overflow-y: auto;
+  }
+
+  .profile-card {
+    transform: translateY(12vh);
+  }
 }
