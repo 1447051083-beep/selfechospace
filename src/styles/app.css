@@ -212,7 +212,8 @@ button {
 
 .brand-logo {
   width: clamp(7.6rem, 13vw, 12.5rem);
-  height: fit-content;
+  height: auto;
+  object-fit: contain;
   opacity: 0.82;
   filter: drop-shadow(0 10px 24px rgba(255, 255, 255, 0.56));
 }
@@ -2717,6 +2718,9 @@ button {
 
   .brand-logo {
     width: clamp(6.4rem, 28vw, 8.2rem);
+    height: auto;
+    max-height: 3.4rem;
+    object-fit: contain;
   }
 
   .status-card,
